@@ -38,9 +38,10 @@ var game = {
 
         me.pool.register("jackie", game.Jackie);
 
-        me.input.bindKey(me.input.KEY.SPACE, "jump", true);
+        me.input.bindKey(me.input.KEY.UP, "jump", true);
         me.input.bindKey(me.input.KEY.RIGHT, "run", true);
-        me.input.bindKey(me.input.KEY.Z, "roll", true);
+        me.input.bindKey(me.input.KEY.DOWN, "roll", true);
+        me.input.bindKey(me.input.KEY.Z, "punch", true);
         me.input.bindKey(me.input.KEY.X, "kick", true);
 
         me.state.change(me.state.PLAY);

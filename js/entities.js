@@ -11,6 +11,7 @@ game.Jackie = me.ObjectEntity.extend({
         this.renderable.addAnimation("idle", [32,33,33,34,35,36,37,38,39,40,41,42,43],65);
         this.renderable.addAnimation("jump",[48,49,50,51,54,53,52,50,48], 68);
         this.renderable.addAnimation("kick",[64,65,66,67,68,69,70,71], 70);
+        this.renderable.addAnimation("punch",[80,81,82,83,84,85], 70);
         
         this.idle();
         me.input.registerPointerEvent('pointerdown', this, this.run.bind(this), true);
@@ -35,27 +36,23 @@ game.Jackie = me.ObjectEntity.extend({
     handleInput: function(){
  
         if(me.input.isKeyPressed('jump')){
-           
             this.jump();
         }
 
-
         if(me.input.isKeyPressed('roll')){
-            
             this.roll();
-        
         }
 
         if(me.input.isKeyPressed('kick')){
-            
             this.kick();
-        
         }
 
         if(me.input.isKeyPressed('run')){
-            
             this.run();
-        
+        }
+
+        if(me.input.isKeyPressed('punch')){
+            this.punch();
         }
 
 
@@ -81,11 +78,13 @@ game.Jackie = me.ObjectEntity.extend({
         this.renderable.setCurrentAnimation("kick","idle");       
     },
 
+    punch: function(){
+        this.renderable.setCurrentAnimation("punch","idle")
+    },
 
     idle: function(){
         this.renderable.setCurrentAnimation("idle");
     },
-
 
     jump: function(){
         this.renderable.setCurrentAnimation("jump","idle");
