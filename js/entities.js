@@ -9,7 +9,7 @@ game.Jackie = me.ObjectEntity.extend({
         this.renderable.addAnimation("run", [0,1,2,3,4,5,6,7,8,9], 70);
         this.renderable.addAnimation("roll", [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],70);
         this.renderable.addAnimation("idle", [32,33,33,34,35,36,37,38,39,40,41,42,43],65);
-        this.renderable.addAnimation("jump",[48,49,50,51,52,53,54,55,53,49,48], 68);
+        this.renderable.addAnimation("jump",[48,49,50,51,54,53,52,50,48], 68);
         this.renderable.addAnimation("kick",[64,65,66,67,68,69,70,71], 70);
         
         this.idle();
